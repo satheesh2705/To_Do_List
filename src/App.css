@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+*{
+  padding: 0%;
+  margin: 0%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.items{
+ display: grid;
+ grid-template-columns:1fr 1fr 1fr;
+ margin: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+input{
+  height: 50px;
+  width: 50px;
+}
+
+
+label{
+  margin-top: 15px;
+  /* margin-left: 50px; 
+  margin-right: 150px;
+*/
+}
+
+
+button{
+  height: 50px;
+  width: 50px;
+
+} 
+
+
+
+/* ???       HEADER       ??? */
+  header{
+    background-color: aqua;
+    font-style: italic;
+   text-align: center;
+   font-family: 'Times New Roman', Times, serif;
+   font-size: 25px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
+  /* ????   Footer   ??????? */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #length{
+    display: flex;
+    justify-content: center;
+    align-items: center; background-color: aqua;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 45px;
+    font-weight: 700;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* ???????  Contant     ?????? */
+
+  #mainContant{
+    margin-left: 250px;
   }
-}
+
+  /* ?????????  AddItem   ??????? */
+
+  .addForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+  }
+
+  .addForm input{
+    height: 40px;
+     width: 70%;
+     cursor: pointer; 
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 20px;
+  }
+
+  .addForm label{
+    position: absolute;
+    left: -99999px;
+  }
+  button:focus,
+  button:hover{
+    color: rgb(0, 0, 0);
+    background-color: lawngreen;
+    outline: none;
+  }
+
+  .addForm button{
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size: 40px;
+    font-weight: bolder;
+  }
+
+
+  @media screen and (max-width:375px) {
+    .addForm{
+      display: flex;
+      justify-content: start;
+    }
+  }
+
+
+  /* search Items  */
+
+
+  .searchItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+  }
+
+  .searchItem input{
+    height: 40px;
+    margin-left: -45px;
+     width: 70%;
+     cursor: pointer; 
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 20px;
+  }
+
+  .searchItem label{
+    position: absolute;
+    left: -99999px;
+  }
+
+  @media screen and (max-width:375px) {
+    .searchItem{
+      display: flex;
+      justify-content: start;
+      margin: 55px;
+    }
+  }
+
+
