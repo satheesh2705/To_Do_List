@@ -142,5 +142,19 @@ button{
       margin: 55px;
     }
   }
+/* item list */
 
+    .main{
+      margin-left: 250px ;
+    }
 
+    @media screen and (max-width:1000px) {
+      .main{
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        margin: 115px;
+      }
+    }
+
+   

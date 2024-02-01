@@ -1,24 +1,14 @@
 {
   "items": [
     {
-      "id": 1,
-      "checked": true,
-      "item": "jacking"
-    },
-    {
-      "id": 2,
+      "id": "2",
       "checked": false,
       "item": "playing"
     },
     {
-      "id": 3,
+      "id": "3",
       "checked": true,
       "item": "collage"
-    },
-    {
-      "id": 4,
-      "checked": false,
-      "item": "kjbkb"
     }
   ]
 }

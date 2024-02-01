@@ -51,7 +51,7 @@ function App() {
     const addNewItem = {id, checked:false,item}
     const ListItems = [...items,addNewItem]
     setItems(ListItems)
-    localStorage.setItem("todo_list",JSON.stringify(ListItems))
+    // localStorage.setItem("todo_list",JSON.stringify(ListItems))
 
     const postOption = {
       method: "POST",
@@ -65,18 +65,44 @@ function App() {
   }
 
 
-  const handleCheckBox = (id) => {
+  const handleCheckBox = async (id) => {
       const listItems = items.map((item) =>
        item.id===id ? {...item, checked:!item.checked} : item)
        setItems(listItems) 
-      localStorage.setItem("todo_list",JSON.stringify(listItems))
+      // localStorage.setItem("todo_list",JSON.stringify(listItems))
+
+
+      const myItem = listItems.filter((item) => item.id === id)
+
+      const updateOption = {
+        method: "PATCH",
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify({checked:myItem[0]})
+      }
+
+      const reqUrl = `${API_URL}/${id}`
+      const result = await apiRequest(reqUrl, updateOption )
+      if(result) setFetchError(result)
+      
+
 
   }
 
-  const handleDelete = (id) =>{
+  const handleDelete = async (id) =>{
       const listItems = items.filter((item) => item.id!==id)
       setItems(listItems)
-      localStorage.setItem("todo_list",JSON.stringify(listItems))
+      // localStorage.setItem("todo_list",JSON.stringify(listItems))
+
+      const deleteOption = {
+        method: 'DELETE'
+      }
+
+      const reqUrl = `${API_URL}/${id}`
+      const result = await apiRequest(reqUrl,deleteOption)
+      if(result) setFetchError(result)
+
   }
 
   const handleSubmit = (e) => {
