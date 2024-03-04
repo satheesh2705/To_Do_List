@@ -6,10 +6,10 @@ const apiRequest = async (url = '',optionObj = null , errMsg = null) =>{
     } catch (err) {
         errMsg = err.message
     }
-
+    finally{
     return errMsg
 
-
+    }
 }
 
 export default apiRequest;

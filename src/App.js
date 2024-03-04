@@ -31,7 +31,7 @@ function App() {
       } catch (error) {
          setFetchError(error.message);
         // console.log(error.stack);
-        }
+        }   
         finally{
           setIsLoading(false);
         }
@@ -43,6 +43,8 @@ function App() {
   },[]);
 
    
+
+  // add............
 
 
   const addItem = async (item) => {
@@ -64,6 +66,9 @@ function App() {
     if(result) setFetchError(result)
   }
 
+
+
+    // update................
 
   const handleCheckBox = async (id) => {
       const listItems = items.map((item) =>
@@ -90,6 +95,10 @@ function App() {
 
   }
 
+
+  // delete..................
+
+  
   const handleDelete = async (id) =>{
       const listItems = items.filter((item) => item.id!==id)
       setItems(listItems)
